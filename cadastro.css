@@ -1,0 +1,235 @@
+:root {
+  --bg-0: #05060b;
+  --bg-1: #0a0e18;
+  --bg-2: #121827;
+  --card-bg: rgba(21, 28, 44, 0.5);
+  --accent: #d9c6a0;
+  --accent-hi: #f4ecdc;
+  --accent-soft: rgba(217, 198, 160, 0.1);
+  --gold: #e8b45a;
+  --text-dark: #ece6d8;
+  --text-muted: #a8a296;
+  --line: rgba(217, 198, 160, 0.2);
+  --glow: rgba(217, 198, 160, 0.22);
+  --shadow: rgba(3, 6, 20, 0.62);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(1200px 700px at 80% -10%, rgba(217, 198, 160, 0.12) 0%, transparent 60%),
+    radial-gradient(900px 600px at 5% 45%, rgba(100, 82, 58, 0.16) 0%, transparent 60%),
+    radial-gradient(1000px 500px at 90% 100%, rgba(232, 180, 90, 0.07) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 45%, var(--bg-2) 120%);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217, 198, 160, 0.05) 0%, transparent 55%),
+    linear-gradient(180deg, transparent 0%, rgba(7, 10, 30, 0.55) 100%);
+  pointer-events: none;
+}
+
+/* Fundo AoT — imagem única + vinheta + zoom suave (Ken Burns) */
+.aot-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("img/aot/cadastro.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.42) saturate(0.9);
+  animation: cadastroBgZoom 26s ease-in-out infinite alternate;
+}
+
+.aot-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 50% 10%, transparent 45%, rgba(4, 6, 12, 0.75) 100%),
+    linear-gradient(180deg, rgba(5, 6, 11, 0.5), transparent 45%, rgba(5, 6, 11, 0.6));
+}
+
+@keyframes cadastroBgZoom {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.14); }
+}
+
+/* Emblema das asas da Patrulha de Reconhecimento */
+.aot-wings {
+  width: clamp(80px, 14vw, 108px);
+  color: var(--accent);
+  filter: drop-shadow(0 0 20px rgba(232, 180, 90, 0.5));
+  animation: cadastroWingsFloat 5s ease-in-out infinite;
+  margin-bottom: 2px;
+}
+
+@keyframes cadastroWingsFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  max-width: 92vw;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 16px 40px 24px;
+  box-sizing: border-box;
+  box-shadow: 0 22px 45px -15px var(--shadow),
+              0 0 34px var(--glow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  z-index: 1;
+  animation: cadastroCardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cadastroCardIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.center-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center h1 {
+  text-align: center;
+  padding: 8px 0 20px;
+  color: var(--text-dark);
+  text-shadow: 0 0 20px var(--glow);
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 1px solid rgba(217, 198, 160, 0.3);
+  margin: 30px 0;
+}
+
+.txt_field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 42px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--text-dark);
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: var(--text-muted);
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.txt_field span::before {
+  content: "";
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  box-shadow: 0 0 12px var(--glow);
+}
+
+.txt_field input:focus ~label,
+.txt_field input:valid ~label {
+  top: -7px;
+  left: 0;
+  color: var(--accent-hi);
+  font-size: 12px;
+  transition: .5s;
+}
+
+.txt_field input:focus ~span::before,
+.txt_field input:valid ~span::before {
+  width: 100%;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid rgba(217, 198, 160, 0.5);
+  background: linear-gradient(135deg, #f4ecdc, #e8b45a);
+  border-radius: 25px;
+  font-size: 17px;
+  color: #3b2a1a;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 8px 22px rgba(232, 180, 90, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(232, 180, 90, 0.4);
+  transform: translateY(-2px);
+}
+
+.signup_link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.signup_link a {
+  text-decoration: none;
+  color: var(--accent-hi);
+}
+
+.signup_link a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 8px var(--glow);
+}
+
+#mensagem {
+  text-align: center;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  min-height: 18px;
+  color: var(--text-muted);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 10px 0;
+  z-index: 9999;
+}

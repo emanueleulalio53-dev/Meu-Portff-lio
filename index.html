@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio — Emanuel Mendes Eulálio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="ambient-light-bg"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="mainNav">
+        <ul class="nav-links">
+            <li>
+                <a href="#slide-0" class="nav-brand active" data-slide="0" aria-label="Início" data-label="Início" title="Início">E</a>
+            </li>
+            <li>
+                <a href="#slide-1" class="nav-btn" data-slide="1" aria-label="História de Vida" data-label="História de Vida" title="História de Vida">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2 2 0 0 1 6 3.5h13v17H6a2 2 0 0 1-2-2z"/><path d="M4 5.5v12"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#slide-2" class="nav-btn" data-slide="2" aria-label="Projeto de Vida" data-label="Projeto de Vida" title="Projeto de Vida">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.6 5.2-5.2 2.6 2.6-5.2z"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="#slide-3" class="nav-btn" data-slide="3" aria-label="Plano de Estudo (PPE)" data-label="PPE" title="Plano de Estudo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 2.8v4.4M16 2.8v4.4"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="areas.html" class="nav-btn" aria-label="Áreas de Estudo" data-label="Áreas de Estudo" title="Áreas de Estudo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.4"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.4"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.4"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.4"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="anexos.html" class="nav-btn" aria-label="Anexos" data-label="Anexos" title="Anexos">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 8.2 10.4 18.3a4.4 4.4 0 0 1-6.2-6.2L14.5 1.9a2.6 2.6 0 0 1 3.7 3.7L8 15.8a1.1 1.1 0 0 1-1.5-1.5L14.5 6"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="login.html" class="nav-btn nav-exit" aria-label="Sair" data-label="Sair" title="Sair">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5"/><path d="m10 7-5 5 5 5"/><path d="M5 12h10"/></svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Navegação ortográfica (ODM) -->
+    <button class="aot-arrow left" data-nav="prev" aria-label="Slide anterior" title="Anterior">&#10094;</button>
+    <button class="aot-arrow right" data-nav="next" aria-label="Próximo slide" title="Próximo">&#10095;</button>
+
+    <!-- Camada de transição -->
+    <div class="sweep-overlay" id="sweepOverlay" aria-hidden="true"></div>
+
+    <!-- Slider horizontal -->
+    <div class="slider-viewport" id="slider">
+        <!-- SLIDE 00 — Abertura -->
+        <section class="aot-slide aot-hero" data-slide="0" id="slide-0">
+            <div class="slide-frame"></div>
+            <div class="slide-inner hero-inner">
+                <svg class="aot-emblem" viewBox="0 0 200 200" aria-hidden="true">
+                    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="100" cy="104" r="34"/>
+                        <path d="M118 88 C132 66 154 54 178 50"/>
+                        <path d="M120 100 C136 88 158 78 180 76"/>
+                        <path d="M118 112 C132 104 150 100 172 102"/>
+                        <path d="M82 88 C68 66 46 54 22 50"/>
+                        <path d="M80 100 C64 88 42 78 20 76"/>
+                        <path d="M82 112 C68 104 50 100 28 102"/>
+                        <path d="M100 74 L100 134"/>
+                        <path d="M104 92 L116 78"/>
+                        <path d="M96 92 L84 78"/>
+                    </g>
+                    <circle cx="100" cy="104" r="7" fill="currentColor"/>
+                </svg>
+                <p class="aot-tag" data-anim-slide>SHINGEKI NO KYOJIN</p>
+                <h1 class="aot-title" data-anim-slide>Emanuel<br>Mendes Eulálio</h1>
+                <p class="aot-sub" data-anim-slide>Um portfólio que vai além das muralhas da sua mente.</p>
+            </div>
+            <div class="slide-indicator">
+                <span class="ind-line"></span>
+                <span class="cavalry-march">DIVISÃO DE RECONHECIMENTO</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 01 — História de Vida -->
+        <section class="aot-slide slide-storia" data-slide="1" id="slide-1">
+            <div class="slide-frame"></div>
+            <div class="slide-inner slide-scroll">
+                <div class="aot-chapter-head" data-anim-slide>
+                    <span class="aot-chip">Capítulo 01 — A Queda de Shiganshina</span>
+                    <h2>História de Vida</h2>
+                </div>
+                <div class="aot-body">
+                    <p data-anim-slide>
+                        Atualmente estou cursando a <strong>3ª série do Ensino Médio</strong> em conjunto com o curso técnico de <strong>Informática para Internet no SENAI</strong>. Minha trajetória é movida pela curiosidade sobre como a tecnologia transforma o mundo e pelo desejo constante de evoluir na área da programação e do desenvolvimento de sistemas.
+                    </p>
+                    <p data-anim-slide>
+                        Este portfólio é a consolidação da minha jornada: um espaço criado de forma intencional para registrar meu aprendizado prático, minhas conquistas acadêmicas, meus projetos no SENAI e no ensino formal, além da construção contínua das minhas metas de vida.
+                    </p>
+                </div>
+                <p class="aot-quote" data-anim-slide>“Se você sacrificar seu coração e sua alma, pode proteger aquilo que existe de mais importante.”</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 02 — Projeto de Vida -->
+        <section class="aot-slide slide-projeto" data-slide="2" id="slide-2">
+            <div class="slide-frame"></div>
+            <div class="slide-inner slide-scroll">
+                <div class="aot-chapter-head" data-anim-slide>
+                    <span class="aot-chip">Capítulo 02 — Guia de Missão</span>
+                    <h2>Projeto de Vida</h2>
+                </div>
+                <div class="aot-sub">Um sonho para fora das muralhas.faça </div>
+                <div class="cards-trio">
+                    <div class="mini-glow-card" data-anim-slide>
+                        <div class="card-icon">01</div>
+                        <h3>Onde estou?</h3>
+                        <p>
+                            Na 3ª série do Ensino Médio e integrado ao curso técnico do SENAI. Aprofundando diariamente meus conhecimentos em lógica, desenvolvimento de software e tecnologias web.
+                        </p>
+                    </div>
+                    <div class="mini-glow-card" data-anim-slide>
+                        <div class="card-icon">02</div>
+                        <h3>Onde quero chegar?</h3>
+                        <p>
+                            Desejo concluir esta etapa com excelência acadêmica e me consolidar como um profissional qualificado na área de TI, preparado para ingressar no mercado e no ensino superior.
+                        </p>
+                    </div>
+                    <div class="mini-glow-card" data-anim-slide>
+                        <div class="card-icon">03</div>
+                        <h3>Como chegarei lá?</h3>
+                        <p>
+                            Através da dedicação constante aos estudos, prática contínua de programação, desenvolvimento de projetos reais e busca proativa por aperfeiçoamento pessoal e técnico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 03 — Plano Pessoal de Estudos -->
+        <section class="aot-slide slide-ppe ppe-print-area" data-slide="3" id="slide-3">
+            <div class="slide-frame"></div>
+            <div class="slide-inner slide-scroll">
+                <div class="aot-chapter-head" data-anim-slide>
+                    <span class="aot-chip">Capítulo 03 — Táticas de Treinamento</span>
+                    <h2>Plano Pessoal de Estudos (PPE)</h2>
+                    <p class="aot-chapter-sub">3ª Série EM — Cronograma Semanal</p>
+                </div>
+
+                <div class="ppe-toolbar" data-anim-slide>
+                    <button id="btnPrint" class="ppe-btn" type="button">Imprimir PPE</button>
+                    <span class="ppe-dica">Clique em um dia da semana para marcá-lo</span>
+                </div>
+
+                <div class="table-container" data-anim-slide>
+                    <table class="ppe-table">
+                        <thead>
+                            <tr>
+                                <th>Turno / Horário</th>
+                                <th>SEG</th>
+                                <th>TER</th>
+                                <th>QUA</th>
+                                <th>QUI</th>
+                                <th>SEX</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time-col"><strong>Manhã</strong><br><span>(08:30 - 10:00)</span></td>
+                                <td><span class="subject-pill blue">Ciências da Natureza</span></td>
+                                <td><span class="subject-pill">Linguagens</span></td>
+                                <td><span class="subject-pill blue">Matemática</span></td>
+                                <td><span class="subject-pill">Ciências Humanas</span></td>
+                                <td><span class="subject-pill highlight">Revisão Geral</span></td>
+                            </tr>
+                            <tr>
+                                <td class="time-col"><strong>Tarde</strong><br><span>(13:00 - 18:20)</span></td>
+                                <td><span class="subject-pill senai">SESI / SENAI</span></td>
+                                <td><span class="subject-pill senai">SENAI / SESI</span></td>
+                                <td><span class="subject-pill senai">SESI / SENAI</span></td>
+                                <td><span class="subject-pill senai">SESI / SENAI</span></td>
+                                <td><span class="subject-pill senai">SENAI</span></td>
+                            </tr>
+                            <tr>
+                                <td class="time-col"><strong>Noite</strong><br><span>(19:00 - 22:00)</span></td>
+                                <td><span class="subject-pill rest">Descanso</span></td>
+                                <td><span class="subject-pill study">Contraturno</span></td>
+                                <td><span class="subject-pill study">Contraturno</span></td>
+                                <td><span class="subject-pill study">Contraturno</span></td>
+                                <td><span class="subject-pill rest">Descanso</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 04 — Epílogo -->
+        <section class="aot-slide slide-final" data-slide="4" id="slide-4">
+            <div class="slide-frame"></div>
+            <div class="slide-inner">
+                <svg class="aot-emblem" viewBox="0 0 200 200" aria-hidden="true">
+                    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="100" cy="104" r="34"/>
+                        <path d="M118 88 C132 66 154 54 178 50"/>
+                        <path d="M120 100 C136 88 158 78 180 76"/>
+                        <path d="M118 112 C132 104 150 100 172 102"/>
+                        <path d="M82 88 C68 66 46 54 22 50"/>
+                        <path d="M80 100 C64 88 42 78 20 76"/>
+                        <path d="M82 112 C68 104 50 100 28 102"/>
+                        <path d="M100 74 L100 134"/>
+                        <path d="M104 92 L116 78"/>
+                        <path d="M96 92 L84 78"/>
+                    </g>
+                    <circle cx="100" cy="104" r="7" fill="currentColor"/>
+                </svg>
+                <p class="aot-tag" data-anim-slide>Epílogo — A Liberdade</p>
+                <h2 class="aot-final-title" data-anim-slide>Você é livre.</h2>
+                <p class="aot-sub" data-anim-slide>Continue explorando além das muralhas. O mundo lá fora é vasto e cheio de possibilidades.</p>
+                <div class="aot-actions" data-anim-slide>
+                    <button class="aot-btn ghost" type="button" data-goto="0">&larr; Recomeçar jornada</button>
+                    <a class="aot-btn primary" href="areas.html">Áreas de estudo &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pontos indicadores -->
+        <div class="aot-dots" id="aotDots" aria-hidden="true"></div>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 MANELITO</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

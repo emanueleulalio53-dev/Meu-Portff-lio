@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso — Portfólio</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="aot-bg" aria-hidden="true"></div>
+    <div class="ambient-glow"></div>
+
+    <main class="login-wrapper">
+        <div class="login-card glow-card">
+            <div class="login-header">
+                <svg class="aot-wings" viewBox="0 0 200 90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M96 74 L118 56 C134 42 152 34 172 32"/>
+                    <path d="M96 66 L118 56 C134 42 152 34 172 32" opacity="0.45"/>
+                    <path d="M104 74 L82 56 C66 42 48 34 28 32"/>
+                    <path d="M104 66 L82 56 C66 42 48 34 28 32" opacity="0.45"/>
+                    <path d="M100 74 L100 44"/>
+                    <path d="M100 52 L92 40"/>
+                    <path d="M100 52 L108 40"/>
+                </svg>
+                <span class="badge">Acesso ao Sistema</span>
+                <h1>Portfólio Pessoal</h1>
+                <p>Identifique-se para navegar na plataforma</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="login" required autocomplete="off" placeholder=" ">
+                    <label for="login">Usuário</label>
+                    <div class="input-glow"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="senha" required placeholder=" ">
+                    <label for="senha">Senha</label>
+                    <div class="input-glow"></div>
+                </div>
+
+                <div class="options">
+                    <a href="#" onclick="alert('Instruções enviadas ao administrador.'); return false;">Esqueceu a senha?</a>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="btnLimpar" class="btn-secondary">Limpar</button>
+                    <button type="submit" class="btn-primary">Conectar</button>
+                </div>
+
+                <p id="mensagem"></p>
+
+                <div class="signup-footer">
+                    Ainda não é membro? <a href="cadastro.html">Cadastre-se</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

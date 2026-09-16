@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Portfólio</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="aot-bg" aria-hidden="true"></div>
+
+    <div class="center">
+        <div class="center-head">
+            <svg class="aot-wings" viewBox="0 0 200 90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true">
+                <path d="M96 74 L118 56 C134 42 152 34 172 32"/>
+                <path d="M96 66 L118 56 C134 42 152 34 172 32" opacity="0.45"/>
+                <path d="M104 74 L82 56 C66 42 48 34 28 32"/>
+                <path d="M104 66 L82 56 C66 42 48 34 28 32" opacity="0.45"/>
+                <path d="M100 74 L100 44"/>
+                <path d="M100 52 L92 40"/>
+                <path d="M100 52 L108 40"/>
+            </svg>
+            <h1>Cadastro</h1>
+        </div>
+        <form id="cadastroForm">
+            <div class="txt_field">
+                <input type="text" id="nome" required autocomplete="name">
+                <label for="nome">Seu Nome Completo</label>
+                <span></span>
+            </div>
+            <div class="txt_field">
+                <input type="email" id="email" required autocomplete="email">
+                <label for="email">Insira seu Email</label>
+                <span></span>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="senha" required autocomplete="new-password">
+                <label for="senha">Crie uma Senha</label>
+                <span></span>
+            </div>
+            <br>
+            <input type="submit" value="Cadastrar">
+            <p id="mensagem"></p>
+
+            <div class="signup_link">
+                <a href="login.html">Já possui conta? Faça o Login</a>
+            </div>
+            <br>
+        </form>
+    </div>
+
+    <footer>
+        <p>©2026-PP LS-Todos os Direitos Reservados.</p>
+        <p>Essa obra não pode ser usada para fins lucrativos.</p>
+    </footer>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>
