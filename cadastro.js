@@ -1,3 +1,5 @@
+import { supabase } from "./supabase-config.js";
+
 const form = document.getElementById("cadastroForm");
 
 const nomeInput = document.getElementById("nome");
@@ -70,7 +72,7 @@ form.addEventListener("submit", async function (event) {
 
 
     // ==============================
-    // ENVIA PARA O SERVIDOR
+    // CADASTRA VIA SUPABASE
     // ==============================
 
     try {
@@ -81,63 +83,60 @@ form.addEventListener("submit", async function (event) {
         mensagem.style.color = "#555";
 
 
-        const resposta = await fetch(
-            "http://localhost:3000/api/cadastro",
-            {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    usuario: nome,
-
-                    email: email,
-
-                    senha: senha
-
-                })
-
+        const { data, error } = await supabase.auth.signUp({
+            email: email,
+            password: senha,
+            options: {
+                data: {
+                    nome: nome
+                }
             }
-        );
+        });
 
 
-        const dados = await resposta.json();
+        if (error) {
+
+            mensagem.textContent =
+                error.message ||
+                "Não foi possível concluir o cadastro.";
+
+            mensagem.style.color = "red";
+
+            return;
+        }
 
 
         // ==============================
         // CADASTRO REALIZADO
         // ==============================
 
-        if (dados.success) {
+        if (data.session) {
 
+            // Confirmação de e-mail desativada — já está autenticado
             mensagem.textContent =
-                "Cadastro realizado com sucesso! Redirecionando para o login...";
+                "Cadastro realizado com sucesso! Redirecionando...";
 
             mensagem.style.color = "green";
 
+            setTimeout(function () {
+
+                window.location.href = "index.html";
+
+            }, 1500);
+
+        } else {
+
+            // Confirmação de e-mail ativada
+            mensagem.textContent =
+                "Cadastro realizado! Confirme seu e-mail e faça o login.";
+
+            mensagem.style.color = "green";
 
             setTimeout(function () {
 
                 window.location.href = "login.html";
 
-            }, 1500);
-
-
-        } else {
-
-            // ==============================
-            // ERRO NO CADASTRO
-            // ==============================
-
-            mensagem.textContent =
-                dados.message ||
-                "Não foi possível concluir o cadastro.";
-
-            mensagem.style.color = "red";
+            }, 2000);
 
         }
 
@@ -151,7 +150,7 @@ form.addEventListener("submit", async function (event) {
 
 
         mensagem.textContent =
-            "Não foi possível conectar ao servidor.";
+            "Não foi possível conectar ao serviço de autenticação.";
 
         mensagem.style.color = "red";
 

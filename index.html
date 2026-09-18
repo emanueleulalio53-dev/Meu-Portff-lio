@@ -43,7 +43,7 @@
                 </a>
             </li>
             <li>
-                <a href="login.html" class="nav-btn nav-exit" aria-label="Sair" data-label="Sair" title="Sair">
+                <a href="login.html" class="nav-btn nav-exit" id="btnSair" data-logout aria-label="Sair" data-label="Sair" title="Sair">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5"/><path d="m10 7-5 5 5 5"/><path d="M5 12h10"/></svg>
                 </a>
             </li>
@@ -239,6 +239,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+            }
+        }
+    </script>
+    <script type="module" src="./auth-guard.js"></script>
 </body>
 
 </html>

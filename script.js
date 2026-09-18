@@ -1,32 +1,3 @@
-function logar(event) {
-    if (event) event.preventDefault();
-
-    const usuarioInput = document.getElementById('login');
-    const senhaInput = document.getElementById('senha');
-
-    if (!usuarioInput || !senhaInput) {
-        window.location.href = 'index.html';
-        return;
-    }
-
-    const usuario = usuarioInput.value.trim();
-    const senha = senhaInput.value.trim();
-
-    if (usuario !== "" && senha !== "") {
-        localStorage.setItem('portfolio_logged_user', usuario);
-        window.location.href = 'index.html';
-    } else {
-        alert('Por favor, preencha o usuário e a senha.');
-    }
-}
-
-function cancelar() {
-    const usuarioInput = document.getElementById('login');
-    const senhaInput = document.getElementById('senha');
-    if (usuarioInput) usuarioInput.value = '';
-    if (senhaInput) senhaInput.value = '';
-}
-
 function voltarPagina() {
     if (document.referrer && document.referrer.includes(window.location.host)) {
         window.history.back();

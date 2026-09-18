@@ -54,6 +54,13 @@
         <p>Essa obra não pode ser usada para fins lucrativos.</p>
     </footer>
 
-    <script src="cadastro.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+            }
+        }
+    </script>
+    <script type="module" src="./cadastro.js"></script>
 </body>
 </html>

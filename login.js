@@ -1,3 +1,5 @@
+import { supabase } from "./supabase-config.js";
+
 const form = document.getElementById("loginForm");
 
 const loginInput = document.getElementById("login");
@@ -12,7 +14,7 @@ form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
 
-    const login = loginInput.value.trim();
+    const email = loginInput.value.trim();
     const senha = senhaInput.value;
 
 
@@ -24,7 +26,7 @@ form.addEventListener("submit", async function (event) {
     // VALIDAÇÕES
     // ==============================
 
-    if (login === "" || senha === "") {
+    if (email === "" || senha === "") {
 
         mensagem.textContent =
             "Preencha usuário e senha.";
@@ -47,7 +49,7 @@ form.addEventListener("submit", async function (event) {
 
 
     // ==============================
-    // ENVIA PARA O SERVIDOR
+    // AUTENTICA VIA SUPABASE
     // ==============================
 
     try {
@@ -58,71 +60,41 @@ form.addEventListener("submit", async function (event) {
         mensagem.style.color = "#555";
 
 
-        const resposta = await fetch(
-            "http://localhost:3000/api/login",
-            {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    email: login,
-
-                    senha: senha
-
-                })
-
-            }
-        );
+        const { data, error } =
+            await supabase.auth.signInWithPassword({
+                email: email,
+                password: senha
+            });
 
 
-        const dados = await resposta.json();
+        if (error) {
+
+            mensagem.textContent =
+                error.message ||
+                "Usuário ou senha inválidos.";
+
+            mensagem.style.color = "red";
+
+            return;
+        }
 
 
         // ==============================
         // LOGIN CORRETO
         // ==============================
 
-        if (dados.success) {
+        mensagem.textContent =
+            "Login realizado com sucesso!";
 
-            mensagem.textContent =
-                "Login realizado com sucesso!";
-
-            mensagem.style.color = "green";
+        mensagem.style.color = "green";
 
 
-            // Guarda os dados do usuário
-            localStorage.setItem(
-                "usuario",
-                JSON.stringify(dados.user)
-            );
+        // Vai para o site
+        setTimeout(function () {
 
+            window.location.href = "index.html";
 
-            // Vai para o site
-            setTimeout(function () {
-
-                window.location.href = "index.html";
-
-            }, 1000);
-
-
-        } else {
-
-            // ==============================
-            // LOGIN INCORRETO
-            // ==============================
-
-            mensagem.textContent =
-                dados.message ||
-                "Usuário ou senha inválidos.";
-
-            mensagem.style.color = "red";
-
-        }
+        }, 1000);
 
 
     } catch (erro) {
@@ -134,7 +106,7 @@ form.addEventListener("submit", async function (event) {
 
 
         mensagem.textContent =
-            "Não foi possível conectar ao servidor.";
+            "Não foi possível conectar ao serviço de autenticação.";
 
         mensagem.style.color = "red";
 
