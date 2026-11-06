@@ -95,6 +95,27 @@ body::before {
   box-shadow: 0 0 22px rgba(217, 198, 160, 0.35);
 }
 
+.btn-next {
+  margin-left: auto;
+  background: linear-gradient(135deg, #f4ecdc, #e8b45a);
+  color: #2b2413;
+  border: 1px solid var(--line);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 14px var(--glow);
+}
+
+.btn-next:hover {
+  transform: translateX(4px);
+  box-shadow: 0 0 22px rgba(217, 198, 160, 0.35);
+}
+
 .header-text h1 {
   font-size: 1.8rem;
   font-weight: 800;

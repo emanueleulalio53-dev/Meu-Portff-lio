@@ -196,7 +196,12 @@ function initSlider() {
     const dotsWrap = document.getElementById('aotDots');
     const sweep = document.getElementById('sweepOverlay');
 
-    const HASH_MAP = { 'inicio': 0, 'historia': 1, 'projeto-de-vida': 2, 'ppe': 3, 'final': 4 };
+    const HASH_MAP = { 'inicio': 0, 'historia': 1, 'projeto-de-vida': 2, 'ppe': 3 };
+
+    // Fluxo entre páginas: após o PPE seguimos para as áreas de atividades
+    // e, em seguida, para os anexos.
+    const PAGE_NEXT = { 3: 'areas.html' };
+
     let current = 0;
     let transitioning = false;
 
@@ -279,13 +284,24 @@ function initSlider() {
         });
     });
 
-    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+    // Avança para o próximo slide ou, no fim da jornada, para a página seguinte
+    function goNext() {
+        if (PAGE_NEXT.hasOwnProperty(current)) { window.location.href = PAGE_NEXT[current]; return; }
+        goTo(current + 1);
+    }
+
+    // Volta para o slide anterior
+    function goPrev() {
+        goTo(current - 1);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', goPrev);
+    if (nextBtn) nextBtn.addEventListener('click', goNext);
 
     // Navegação por teclado (setas)
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
-        if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
     });
 
     // Restaura a seção a partir da URL (#historia, #slide-2, ...)
