@@ -196,11 +196,11 @@ function initSlider() {
     const dotsWrap = document.getElementById('aotDots');
     const sweep = document.getElementById('sweepOverlay');
 
-    const HASH_MAP = { 'inicio': 0, 'historia': 1, 'projeto-de-vida': 2, 'ppe': 3 };
+    const HASH_MAP = { 'inicio': 0, 'historia': 1, 'projeto-de-vida': 2, 'ppe': 3, 'consideracoes': 4 };
 
-    // Fluxo entre páginas: após o PPE seguimos para as áreas de atividades
-    // e, em seguida, para os anexos.
-    const PAGE_NEXT = { 3: 'areas.html' };
+    // Fluxo entre páginas: após as considerações finais seguimos para as áreas
+    // de atividades e, em seguida, para os anexos.
+    const PAGE_NEXT = { 4: 'areas.html' };
 
     let current = 0;
     let transitioning = false;

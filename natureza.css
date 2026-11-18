@@ -164,6 +164,29 @@ body::before {
   box-shadow: 0 14px 28px -10px var(--shadow), 0 0 24px var(--glow);
 }
 
+/* Destaque: primeira atividade de cada eixo */
+.eixo-wrapper .activities-grid .activity-card:first-child {
+  border: 2px solid rgba(74, 222, 128, 0.95);
+  box-shadow:
+    0 0 0 2px rgba(34, 197, 94, 0.35),
+    0 0 24px rgba(34, 197, 94, 0.6),
+    0 0 48px rgba(34, 197, 94, 0.35),
+    0 0 80px rgba(34, 197, 94, 0.18),
+    inset 0 0 18px rgba(34, 197, 94, 0.12),
+    0 16px 32px -10px var(--shadow);
+}
+
+.eixo-wrapper .activities-grid .activity-card:first-child:hover {
+  border-color: rgba(134, 239, 172, 1);
+  box-shadow:
+    0 0 0 3px rgba(74, 222, 128, 0.45),
+    0 0 32px rgba(34, 197, 94, 0.75),
+    0 0 64px rgba(34, 197, 94, 0.45),
+    0 0 100px rgba(34, 197, 94, 0.22),
+    inset 0 0 22px rgba(34, 197, 94, 0.16),
+    0 20px 38px -12px var(--shadow);
+}
+
 .thumb-link {
   display: block;
   height: 180px;

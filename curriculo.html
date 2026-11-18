@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./curriculo.css">
+    <title>Currículo — Portfólio</title>
+</head>
+
+<body>
+    <div class="ambient-light-bg"></div>
+
+    <header class="top-nav">
+        <button onclick="voltarPagina()" class="btn-back">&#8592; Voltar</button>
+        <div class="header-text">
+            <h1>Currículo</h1>
+            <p>Emanuel Mendes — Estudante</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="eixo-wrapper" data-anim data-delay="0">
+            <div class="curriculo-bloco">
+                <div class="curriculo-foto">
+                    <img src="img/foto curriculo.jpg" alt="Foto de Emanuel Mendes">
+                </div>
+                <p class="curriculo-linha"><strong>NOME:</strong> Emanuel Mendes</p>
+                <p class="curriculo-linha"><strong>CARGO/IDENTIFICAÇÃO:</strong> Estudante.</p>
+                <p class="curriculo-linha"><strong>SOBRE MIM:</strong> Gosto de sempre estar aprendendo coisas novas, sou persuasivo, sei priorizar demandas e sempre tento ajudar o máximo que conseguir.</p>
+                <p class="curriculo-linha"><strong>FORMAÇÃO ESCOLAR:</strong> SESI Wilma Catão Araújo – 3º ano do Ensino Médio.</p>
+                <p class="curriculo-linha"><strong>CURSO:</strong> Serviço Nacional de Aprendizagem Industrial (SENAI) – Formação Técnica e Profissional. 2024 – Cursando.</p>
+                <p class="curriculo-linha"><strong>EXPERIÊNCIAS ESCOLARES:</strong></p>
+                <ul class="curriculo-lista">
+                    <li>2024 – III Mostra SESI de Iniciação Científica.</li>
+                    <li>2025 – IV Mostra Científica (Primeiro Lugar).</li>
+                    <li>SAGA SENAI 2025 – DSPI (Desafio SENAI de Projetos Integradores).</li>
+                    <li>2026 – V Mostra Científica.</li>
+                    <li>2026 – Grand Prix SENAI de Inovação.</li>
+                </ul>
+                <p class="curriculo-linha"><strong>HABILIDADES:</strong> Proatividade, Criatividade, Pensamento crítico, Análise, Comunicação.</p>
+                <p class="curriculo-linha"><strong>CONTATO:</strong></p>
+                <ul class="curriculo-lista">
+                    <li><strong>Telefone/WhatsApp:</strong> (89) 89 994396861</li>
+                    <li><strong>E-mail:</strong> <a href="mailto:emanueleulalio53@gmail.com">emanueleulalio53@gmail.com</a></li>
+                    <li><strong>Endereço:</strong> Bairro Pantanal.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+      }
+    }
+    </script>
+    <script type="module" src="./auth-guard.js"></script>
+</body>
+
+</html>

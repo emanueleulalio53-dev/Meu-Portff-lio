@@ -550,6 +550,45 @@ body::before {
   color: var(--gold);
 }
 
+.objetivos-destaque {
+  max-width: 780px;
+  margin: 4px auto 0;
+  padding: 18px 22px;
+  background: rgba(232, 180, 90, 0.07);
+  border: 1px solid rgba(232, 180, 90, 0.35);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: 0 0 22px rgba(232, 180, 90, 0.12);
+}
+
+.objetivos-destaque h3 {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.objetivos-destaque ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.objetivos-destaque li {
+  font-size: 1.02rem;
+  color: #d9d3c2;
+  margin-bottom: 6px;
+}
+
+.objetivos-destaque li:last-child {
+  margin-bottom: 0;
+}
+
+.objetivos-destaque li::marker {
+  color: var(--gold);
+}
+
 .aot-quote {
   margin-top: 20px;
   font-style: italic;

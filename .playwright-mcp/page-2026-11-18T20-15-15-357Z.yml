@@ -1,0 +1,25 @@
+- main [ref=f1e3]:
+  - generic [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e13]: Acesso ao Sistema
+      - heading "Portfólio Pessoal" [level=1] [ref=f1e14]
+      - paragraph [ref=f1e15]: Identifique-se para navegar na plataforma
+    - generic [ref=f1e16]:
+      - generic [ref=f1e17]:
+        - textbox "Usuário" [ref=f1e18]:
+          - /placeholder: " "
+        - generic: Usuário
+      - generic [ref=f1e19]:
+        - textbox "Senha" [ref=f1e20]:
+          - /placeholder: " "
+        - generic: Senha
+      - link "Esqueceu a senha?" [ref=f1e22] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=f1e23]:
+        - button "Limpar" [ref=f1e24] [cursor=pointer]
+        - button "Conectar" [ref=f1e25] [cursor=pointer]
+      - paragraph [ref=f1e26]
+      - generic [ref=f1e27]:
+        - text: Ainda não é membro?
+        - link "Cadastre-se" [ref=f1e28] [cursor=pointer]:
+          - /url: cadastro.html
